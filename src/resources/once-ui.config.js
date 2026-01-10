@@ -64,47 +64,6 @@ const dataStyle = {
   },
 };
 
-const effects = {
-  mask: {
-    cursor: false,
-    x: 50,
-    y: 0,
-    radius: 100,
-  },
-  gradient: {
-    display: false,
-    x: 50,
-    y: 0,
-    width: 100,
-    height: 100,
-    tilt: 0,
-    colorStart: "brand-background-strong",
-    colorEnd: "static-transparent",
-    opacity: 50,
-  },
-  dots: {
-    display: true,
-    size: "2",
-    color: "brand-on-background-weak",
-    opacity: 40,
-  },
-  lines: {
-    display: false,
-    color: "neutral-alpha-weak",
-    opacity: 100,
-    thickness: 1,
-    angle: 45,
-    size: "8",
-  },
-  grid: {
-    display: false,
-    color: "neutral-alpha-weak",
-    opacity: 100,
-    width: "2",
-    height: "2",
-  },
-};
-
 // metadata for pages
 const meta = {
   home: {
@@ -136,4 +95,4 @@ const social = {
   discord: "https://discord.com/invite/5EyAQ4eNdS",
 };
 
-export { baseURL, fonts, style, meta, schema, social, effects, dataStyle };
+export { baseURL, fonts, style, meta, schema, social, dataStyle };
