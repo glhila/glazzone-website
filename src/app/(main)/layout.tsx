@@ -27,26 +27,19 @@ export default function MainLayout({
     >
       <Background
         position="fixed"
-        grid={{
-          display: true,
-          width: "48",
-          height: "48",
-          color: "neutral-alpha-weak",
-        }}
-        dots={{
-          display: false,
-        }}
+        dots={{ display: false }}
+        grid={{ display: false }}
         gradient={{
           display: true,
-          tilt: -10,
-          height: 80,
-          width: 60,
-          x: 80,
-          y: -20,
+          tilt: 0,
+          height: 60,
+          width: 80,
+          x: 70,
+          y: -10,
           colorStart: "brand-background-strong",
           colorEnd: "static-transparent",
         }}
-        mask={{ cursor: true }}
+        mask={{ cursor: false }}
       />
 
       <Navigation />
