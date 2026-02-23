@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Flex, Button, SmartLink, Icon, Text, Line } from "@once-ui-system/core";
+import { Flex, Button, SmartLink, Icon, Text } from "@once-ui-system/core";
 import { usePathname } from "next/navigation";
 
 const navLinks = [
@@ -27,7 +27,7 @@ export default function Navigation() {
         right: 0,
         zIndex: 100,
         height: "64px",
-        alignItems:"center",
+        alignItems: "center",
         justifyContent: "space-between",
         backdropFilter: "blur(20px)",
         WebkitBackdropFilter: "blur(20px)",
@@ -37,7 +37,7 @@ export default function Navigation() {
     >
       {/* Logo */}
       <SmartLink href="/" style={{ textDecoration: "none" }}>
-        <Flex style={{alignItems:"center"}} gap="m">
+        <Flex style={{ alignItems: "center" }} gap="m">
           <Flex
             style={{
               width: "32px",
@@ -70,7 +70,7 @@ export default function Navigation() {
       </SmartLink>
 
       {/* Desktop Nav */}
-      <Flex gap="xs" style={{alignItems:"center"}} className="nav-desktop">
+      <Flex gap="xs" style={{ alignItems: "center" }} className="nav-desktop">
         {navLinks.map((link) => {
           const isActive =
             link.href === "/" ? pathname === "/" : pathname?.startsWith(link.href);
@@ -85,7 +85,15 @@ export default function Navigation() {
             </Button>
           );
         })}
-        <Flex style={{ width: "1px", height: "24px", background: "var(--neutral-border-weak)", margin: "0 4px" }} />
+        {/* Divider */}
+        <Flex
+          style={{
+            width: "1px",
+            height: "20px",
+            background: "var(--neutral-border-weak)",
+            margin: "0 4px",
+          }}
+        />
         <Button href="mailto:baruchglazz@gmail.com" variant="primary" size="s">
           <Icon name="mail" size="xs" />
           Get a Quote
@@ -94,7 +102,11 @@ export default function Navigation() {
 
       {/* Mobile toggle */}
       <Flex className="nav-mobile">
-        <Button variant="tertiary" size="s" onClick={() => setMobileOpen(!mobileOpen)}>
+        <Button
+          variant="tertiary"
+          size="s"
+          onClick={() => setMobileOpen(!mobileOpen)}
+        >
           <Icon name={mobileOpen ? "close" : "menu"} size="m" />
         </Button>
       </Flex>
