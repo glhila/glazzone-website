@@ -1,10 +1,51 @@
-# Once UI for Next.js
+# GLAZZONE site
 
 A design system for indie builders, startups and freelancers. Once UI combines the simplicity of low-code with the power of code: write 70% less code compared to shadcn + Tailwind. Includes 100+ advanced components.
 
 Check the demo [here](https://demo.once-ui.com).
 
 ![Once UI](public/images/og/home.jpg)
+
+---
+
+## Project structure
+
+High‑level file and folder overview:
+
+```bash
+GLAZZONE/
+├── public/ 
+├── src/                         
+│   ├── app/   
+│   │   ├── (main)/
+│   │   │   ├── contact/                  
+│   │   │   │   └── page.tsx
+│   │   │   ├── products/                  
+│   │   │   │   └── page.tsx
+│   │   │   ├── technical-support/                  
+│   │   │   │   └── page.tsx
+│   │   │   ├── layout.tsx                  
+│   │   │   └── page.tsx                  
+│   │   ├── api/ 
+│   │   └── layout.tsx
+│   ├── componets/
+│   │   ├── Footer.tsx
+│   │   ├── Navigation.tsx
+│   │   └── Providers.tsx
+│   ├── resource/
+│   │   ├── config.js
+│   │   ├── content.js
+│   │   ├── custom.css
+│   │   ├── icon.js
+│   │   └── once-ui.config.js
+├── next.config.mjs                  
+├── package.json                     
+└── tsconfig.json
+ 
+
+```
+
+---
 
 ## Features
 
