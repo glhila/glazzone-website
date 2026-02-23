@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { fonts } from "@/resources/once-ui.config";
 import { Providers } from "@/components/Providers";
 import classNames from "classnames";
+import '../resources/custom.css';
 
 export const metadata: Metadata = {
   title: "GLAZZONE - Electronic Solutions",
