@@ -12,54 +12,77 @@
   --default-border: var(--neutral-border-medium);
 }
 
-/* ── READABILITY OVERRIDES ─────────────────────────────────────────────── */
-/* Lift the background from near-black to a readable dark slate            */
+/* ═══════════════════════════════════════════════════════════════════════════
+   COLOR PALETTE — matched to GLAZZONE logo
+   Navy:   #3d4469  (background, logo square)
+   Teal:   #3dbfbf  (logo icon, main brand)
+   Orange: #e8703a  (logo dot accent)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
 [data-theme="dark"] {
-  /* Page background — dark slate, not black */
-  --page-background:              #0f1117;
 
-  /* Surface layers — clearly stepped so cards are visible */
-  --neutral-background-weak:      #161b24;
-  --neutral-background-medium:    #1c2333;
-  --neutral-background-strong:    #222c3c;
+  /* ── Page & surface backgrounds — navy family ── */
+  --page-background:              #252a44;   /* dark navy, logo-matched */
+  --neutral-background-weak:      #2d3352;   /* card bg — slightly lighter */
+  --neutral-background-medium:    #343b5e;   /* raised surfaces */
+  --neutral-background-strong:    #3d4469;   /* matches logo square exactly */
 
-  /* Borders — much more visible */
-  --neutral-border-weak:          rgba(148, 163, 184, 0.15);
-  --neutral-border-medium:        rgba(148, 163, 184, 0.28);
-  --neutral-border-strong:        rgba(148, 163, 184, 0.5);
+  /* ── Borders — navy-tinted, clearly visible ── */
+  --neutral-border-weak:          rgba(141, 153, 199, 0.18);
+  --neutral-border-medium:        rgba(141, 153, 199, 0.32);
+  --neutral-border-strong:        rgba(141, 153, 199, 0.55);
 
-  /* Text — slightly brighter for readability */
-  --neutral-on-background-weak:   #8892a4;
-  --neutral-on-background-medium: #b0bac8;
-  --neutral-on-background-strong: #e2e8f0;
+  /* ── Text ── */
+  --neutral-on-background-weak:   #8d99c7;   /* muted navy-blue text */
+  --neutral-on-background-medium: #b8c0df;
+  --neutral-on-background-strong: #eef0f8;   /* near-white */
 
-  /* Brand — keep the cyan but a touch brighter */
-  --brand-border-weak:            rgba(34, 211, 238, 0.2);
-  --brand-border-medium:          rgba(34, 211, 238, 0.4);
-  --brand-border-strong:          rgba(34, 211, 238, 0.75);
-  --brand-background-weak:        rgba(34, 211, 238, 0.06);
-  --brand-background-medium:      rgba(34, 211, 238, 0.13);
-  --brand-background-strong:      rgba(34, 211, 238, 0.22);
+  /* ── Brand — teal from logo ── */
+  --brand-on-background-weak:     #7adede;
+  --brand-on-background-medium:   #3dbfbf;   /* exact logo teal */
+  --brand-on-background-strong:   #2ea8a8;
+  --brand-background-weak:        rgba(61, 191, 191, 0.08);
+  --brand-background-medium:      rgba(61, 191, 191, 0.16);
+  --brand-background-strong:      rgba(61, 191, 191, 0.28);
+  --brand-border-weak:            rgba(61, 191, 191, 0.22);
+  --brand-border-medium:          rgba(61, 191, 191, 0.45);
+  --brand-border-strong:          rgba(61, 191, 191, 0.8);
+  --brand-solid-weak:             #2ea8a8;
+  --brand-solid-medium:           #3dbfbf;
+  --brand-solid-strong:           #5ed0d0;
+
+  /* ── Accent — orange dot from logo ── */
+  --accent-on-background-weak:    #f0a07a;
+  --accent-on-background-medium:  #e8703a;   /* exact logo orange */
+  --accent-background-weak:       rgba(232, 112, 58, 0.08);
+  --accent-background-medium:     rgba(232, 112, 58, 0.16);
+  --accent-border-weak:           rgba(232, 112, 58, 0.25);
+  --accent-border-medium:         rgba(232, 112, 58, 0.5);
+  --accent-solid-medium:          #e8703a;
 }
 
-/* ── Blueprint grid — slightly more visible now ────────────────────────── */
+/* ── Subtle circuit-board dot grid (teal-tinted) ──────────────────────── */
 body {
-  background-image:
-    linear-gradient(rgba(148, 163, 184, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(148, 163, 184, 0.04) 1px, transparent 1px);
-  background-size: 48px 48px;
+  background-image: radial-gradient(
+    circle,
+    rgba(61, 191, 191, 0.12) 1px,
+    transparent 1px
+  );
+  background-size: 28px 28px;
 }
 
-/* ── Card hover glow ───────────────────────────────────────────────────── */
+/* ── Card hover — teal glow ───────────────────────────────────────────── */
 .service-card {
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease,
+              transform 0.2s ease;
 }
 .service-card:hover {
   border-color: var(--brand-border-medium) !important;
-  box-shadow: 0 0 16px rgba(34, 211, 238, 0.06);
+  box-shadow: 0 4px 24px rgba(61, 191, 191, 0.12);
+  transform: translateY(-2px);
 }
 
-/* ── Image placeholder shimmer ─────────────────────────────────────────── */
+/* ── Image placeholder shimmer ───────────────────────────────────────── */
 .img-placeholder {
   background: linear-gradient(
     135deg,
@@ -77,7 +100,30 @@ body {
   100% { background-position: 0% 50%; }
 }
 
-/* ── Responsive nav ────────────────────────────────────────────────────── */
+/* ── Stat bar value numbers ───────────────────────────────────────────── */
+.stat-value {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #3dbfbf;
+  letter-spacing: 0.02em;
+}
+
+/* ── Orange accent tag ────────────────────────────────────────────────── */
+.tag-accent {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgba(232, 112, 58, 0.12);
+  border: 1px solid rgba(232, 112, 58, 0.35);
+  color: #e8703a;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  width: fit-content;
+}
+
+/* ── Responsive nav ──────────────────────────────────────────────────── */
 @media (max-width: 768px) {
   .nav-desktop { display: none !important; }
   .nav-mobile  { display: flex !important; }
