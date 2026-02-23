@@ -2,10 +2,9 @@ import type { Metadata } from "next";
 import { fonts } from "@/resources/once-ui.config";
 import { Providers } from "@/components/Providers";
 import classNames from "classnames";
-import '../resources/custom.css';
 
 export const metadata: Metadata = {
-  title: "GLAZZONE - Electronic Solutions",
+  title: "GLAZZONE — Electronic Solutions",
   description:
     "Engineering-grade display technology — TFT LCD, resistive and capacitive touch panels, and electronic component solutions.",
 };
@@ -19,12 +18,12 @@ export default function AppLayout({
     <html
       lang="en"
       data-theme="dark"
-      data-neutral="gray"
+      data-neutral="slate"
       data-brand="cyan"
-      data-accent="aqua"
-      data-solid="contrast"
+      data-accent="orange"
+      data-solid="color"
       data-solid-style="flat"
-      data-border="sharp"
+      data-border="playful"       /* rounded — matches logo's friendly style */
       data-surface="filled"
       data-transition="all"
       data-scaling="100"
@@ -41,4 +40,3 @@ export default function AppLayout({
     </html>
   );
 }
-
