@@ -1,5 +1,5 @@
-// IMPORTANT: Replace with your own domain address - it's used for SEO in meta tags and schema
-const baseURL = "https://demo.once-ui.com";
+// IMPORTANT: Replace with your actual domain when launching (e.g., "https://glazzone.com/")
+const baseURL = "http://localhost:3000/";
 
 // Import and set font for each variant
 import { Geist } from "next/font/google";
@@ -36,24 +36,24 @@ const fonts = {
   code: code,
 };
 
-// default customization applied to the HTML in the main layout.tsx
+// Customization applied to the HTML in the main layout.tsx
 const style = {
-  theme: "system", // dark | light | system
-  neutral: "gray", // sand | gray | slate | mint | rose | dusk | custom
-  brand: "blue", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
-  accent: "indigo", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
-  solid: "contrast", // color | contrast | inverse
-  solidStyle: "flat", // flat | plastic
-  border: "playful", // rounded | playful | conservative | sharp
-  surface: "filled", // filled | translucent
-  transition: "all", // all | micro | macro
-  scaling: "100", // 90 | 95 | 100 | 105 | 110
+  theme: "dark",          // dark | light | system
+  neutral: "slate",       // Gives a colder, metallic hardware feel
+  brand: "aqua",          // Electric / LED tech vibe
+  accent: "orange",       // Copper / Indicator lights contrast
+  solid: "color",         
+  solidStyle: "flat",     // Clean, matte finish like PCB boards
+  border: "sharp",        // Precision edges (No playful rounded corners!)
+  surface: "translucent", // Glassy, high-tech screen feel
+  transition: "micro",    // Fast, snappy, machine-like animations
+  scaling: "95",          // Slightly denser UI to fit more technical specs
 };
 
 const dataStyle = {
-  variant: "gradient", // flat | gradient | outline
-  mode: "categorical", // categorical | divergent | sequential
-  height: 24, // default chart height
+  variant: "outline",     // Outline looks more like engineering software/blueprints
+  mode: "categorical",    
+  height: 24,             
   axis: {
     stroke: "var(--neutral-alpha-weak)",
   },
@@ -64,35 +64,35 @@ const dataStyle = {
   },
 };
 
-// metadata for pages
+// Metadata for SEO & Social Sharing (Updated for Electronics Engineering)
 const meta = {
   home: {
     path: "/",
-    title: "Once UI for Next.js",
+    title: "GLAZZONE | Electronics Engineering & Technological Solutions",
     description:
-      "An open-source design system and component library for Next.js that emphasizes easy styling and accessibility in UI development.",
-    image: "/images/og/home.jpg",
-    canonical: "https://once-ui.com",
+      "Specializing in advanced electronics engineering, custom hardware design, and innovative technological solutions for complex systems.",
+    image: "/images/og/home.jpg", // Make sure to replace this image in your public folder!
+    canonical: baseURL,
     robots: "index,follow",
-    alternates: [{ href: "https://once-ui.com", hrefLang: "en" }],
+    alternates: [{ href: baseURL, hrefLang: "en" }],
   },
   // add more routes and reference them in page.tsx
 };
 
-// default schema data
+// Default schema data for Google Search
 const schema = {
-  logo: "",
+  logo: "", // Add the path to your logo here, e.g., "/images/logo.png"
   type: "Organization",
-  name: "Once UI",
+  name: "GLAZZONE",
   description: meta.home.description,
-  email: "lorant@once-ui.com",
+  email: "baruchglazz@gmail.com",
 };
 
-// social links
+// Social links
 const social = {
-  twitter: "https://www.twitter.com/_onceui",
-  linkedin: "https://www.linkedin.com/company/once-ui/",
-  discord: "https://discord.com/invite/5EyAQ4eNdS",
+  twitter: "",
+  linkedin: "", // Add your professional or company LinkedIn here
+  discord: "",
 };
 
 export { baseURL, fonts, style, meta, schema, social, dataStyle };
